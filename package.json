@@ -1,0 +1,26 @@
+{
+  "name": "watson_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosSalesNaturalTec/watson_server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosSalesNaturalTec/watson_server/issues"
+  },
+  "homepage": "https://github.com/CarlosSalesNaturalTec/watson_server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "formidable": "^2.0.1",
+    "ibm-watson": "^7.1.1"
+  }
+}
