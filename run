@@ -8,7 +8,7 @@ function clean() {
   set +ex
   echo Cleaning...
   (
-  ibmcloud ce app delete -n hello -f
+  ibmcloud ce app delete -n watson_server -f
   rm -f out
   ) > /dev/null 2>&1
 }
@@ -20,16 +20,16 @@ set -ex
 export REGISTRY=${REGISTRY:-icr.io/codeengine}
 
 # Create the app
-ibmcloud ce app create -n hello --image ${REGISTRY}/hello
+ibmcloud ce app create -n watson_server --image ${REGISTRY}/watson_server
 
 # Get the URL of the app for later use
-URL=$(ibmcloud ce app get -n hello -o url)
+URL=$(ibmcloud ce app get -n watson_server -o url)
 
 # Now call it
 curl -fs $URL | tee out
 [[ "${PIPESTATUS[0]}" == "0" ]]
 
-if ! [[ "$(cat out)" == "Hello World" ]]; then
+if ! [[ "$(cat out)" == "watson_server_ON" ]]; then
   echo "Unexpected output"
   exit 1
 fi
