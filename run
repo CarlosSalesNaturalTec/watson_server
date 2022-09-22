@@ -29,7 +29,7 @@ URL=$(ibmcloud ce app get -n watson_server -o url)
 curl -fs $URL | tee out
 [[ "${PIPESTATUS[0]}" == "0" ]]
 
-if ! [[ "$(cat out)" == "watson_server_ON" ]]; then
+if ! [[ "$(cat out)" == "watson_server ON" ]]; then
   echo "Unexpected output"
   exit 1
 fi
